@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  server-service:
+    build:
+      context: ./server
+      dockerfile: ./Dockerfile
+    container_name: server-container
+    ports:
+      - '5000:5000'
+    environment:
+      - FRONTEND=http://127.0.0.1:5500
+      - ENV=production
