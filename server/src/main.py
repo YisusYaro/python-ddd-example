@@ -2,6 +2,7 @@ import os
 import flask
 from waitress import serve
 from app_controller import app_controller
+from resources.controller import resources_controller
 
 app = flask.Flask(__name__)
 
@@ -9,6 +10,7 @@ def main():
     env = os.environ.get("ENV")
 
     app.register_blueprint(app_controller)
+    app.register_blueprint(resources_controller)
 
     if(env=="production"):
         serve(app, host="0.0.0.0", port=5000)
