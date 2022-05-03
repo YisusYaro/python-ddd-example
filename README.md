@@ -33,3 +33,4 @@ docker exec -it server-container pipenv run start
 This project is under the License described in the file [LICENSE](LICENSE)
 
 ---
+⌨️ with ❤️
