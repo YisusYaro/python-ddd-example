@@ -5,12 +5,17 @@ from waitress import serve
 
 from app_controller import app_controller
 from resources.interface.controller import resources_controller
+from resources.infraestructure.dependency_injection.resources_module import setResourcesModule
+from shared.infraestructure.dependency_injection.app_container import AppContainer
 
 app = flask.Flask(__name__)
 
 
 def main():
     env = os.environ.get("ENV")
+
+    AppContainer()
+    setResourcesModule()
 
     app.register_blueprint(app_controller)
     app.register_blueprint(resources_controller)
