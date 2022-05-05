@@ -1,6 +1,8 @@
-class CommandBus(object):
-    def __init__(self):
-        pass
+from ..dependency_injection import app_container
 
+
+class CommandBus(object):
     def execute(self, command):
-        print(command)
+        command_handler = app_container.AppContainer().container.__getattribute__(
+            command.__class__.__name__)()
+        command_handler.handle(command)
