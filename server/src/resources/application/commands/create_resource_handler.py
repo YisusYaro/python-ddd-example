@@ -9,4 +9,9 @@ class CreateResourceHandler(object):
 
     def handle(self, command):
         resource = Factory.create(id=command.id, name=command.name)
+
+        resource.handleCreation()
+        
         self.resource_repository.save(resource)
+
+        resource.commit()
