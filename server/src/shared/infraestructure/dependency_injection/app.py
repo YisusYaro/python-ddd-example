@@ -2,7 +2,7 @@ from ..data_structures.singleton import Singleton
 from .container import Container
 
 
-class AppContainer(object, metaclass=Singleton):
+class App(object, metaclass=Singleton):
     def __init__(self):
         self.container = Container()
         self.container.init_resources()

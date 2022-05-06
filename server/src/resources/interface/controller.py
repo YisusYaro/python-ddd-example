@@ -2,10 +2,10 @@ from flask import Blueprint, Response, request
 
 from ..application.commands.create_resource_command import \
     CreateResourceCommand
-from shared.infraestructure.dependency_injection.app_container import AppContainer
+from shared.infraestructure.dependency_injection.app import App
 
 resources_controller = Blueprint('resources_controller', __name__)
-command_bus = AppContainer().container.CommandBus()
+command_bus = App().container.CommandBus()
 
 @resources_controller.route("/resources", methods=['GET'])
 def get_resource():
