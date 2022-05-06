@@ -27,4 +27,4 @@ def create_resource():
     body = request.get_json()
     command = CreateResourceCommand(id=body["id"], name=body["name"])
     command_bus.execute(command)
-    return {}, 404
+    return {}, 204
