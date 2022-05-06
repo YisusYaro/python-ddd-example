@@ -14,3 +14,7 @@ services:
     environment:
       - FRONTEND=http://127.0.0.1:5500
       - ENV=test
+      - DATABASE=${DATABASE}
+      - DATABASE_HOST=${DATABASE_HOST}
+      - DATABASE_USER=${DATABASE_USER}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
