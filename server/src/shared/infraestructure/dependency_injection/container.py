@@ -3,6 +3,7 @@ from resources.infraestructure.repositories.resource_respository import Resource
 
 from ..command_bus.command_bus import CommandBus
 from ..query_bus.query_bus import QueryBus
+from ..event_bus.event_bus import EventBus
 
 
 class Container(containers.DeclarativeContainer):
@@ -13,6 +14,10 @@ class Container(containers.DeclarativeContainer):
 
     QueryBus = providers.Factory(
         QueryBus,
+    )
+
+    EventBus = providers.Factory(
+        EventBus,
     )
 
     ResourceRepository = providers.Factory(
