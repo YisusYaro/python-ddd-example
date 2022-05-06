@@ -9,6 +9,7 @@ waitress = "*"
 dependency-injector = "*"
 pymongo = "*"
 dnspython = "*"
+ulid-py = "*"
 
 [dev-packages]
 
