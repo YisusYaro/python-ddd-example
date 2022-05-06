@@ -1,15 +1,12 @@
-from importlib.resources import Resource
-from dependency_injector.wiring import Provide, inject
 from resources.infraestructure.repositories.resource_respository import ResourceRepository
-from shared.infraestructure.dependency_injection.app_container import AppContainer
-from dependency_injector.wiring import Provide, inject
+from shared.infraestructure.dependency_injection.app import App
+from resources.domain.factory import Factory
 
 
 class CreateResourceHandler(object):
-    @inject
-    def __init__(self, resource_repository: ResourceRepository = AppContainer().container.ResourceRepository()):
+    def __init__(self, resource_repository: ResourceRepository = App().container.ResourceRepository()):
         self.resource_repository = resource_repository
 
     def handle(self, command):
-        self.resource_repository.save(command.name)
-        print("handling", command.name)
+        resource = Factory.create(id=command.id, name=command.name)
+        self.resource_repository.save(resource)
