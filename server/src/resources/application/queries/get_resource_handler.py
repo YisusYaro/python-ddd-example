@@ -1,7 +1,7 @@
 from resources.application.queries.get_resource_result import GetResourceResult
-from resources.infraestructure.repositories.resource_respository import \
+from resources.infrastructure.repositories.resource_respository import \
     ResourceRepository
-from shared.infraestructure.dependency_injection.app import App
+from shared.infrastructure.dependency_injection.app import App
 from shared.domain.exceptions.bad_request import BadRequestException
 from resources.domain.errors.error import ErrorMessage
 

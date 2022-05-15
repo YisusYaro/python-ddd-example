@@ -1,4 +1,4 @@
-from shared.infraestructure.repositories.mongo_repository import MongoRepository
+from shared.infrastructure.repositories.mongo_repository import MongoRepository
 from resources.domain.factory import Factory
 
 

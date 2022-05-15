@@ -1,7 +1,7 @@
 from flask import Blueprint, Response, jsonify, request
 from resources.application.queries.get_resource_query import GetResourceQuery
 from shared.domain.exceptions.bad_request import BadRequestException
-from shared.infraestructure.dependency_injection.app import App
+from shared.infrastructure.dependency_injection.app import App
 
 from ..application.commands.create_resource_command import \
     CreateResourceCommand

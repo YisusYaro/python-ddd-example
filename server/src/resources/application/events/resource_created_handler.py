@@ -1,5 +1,5 @@
-from resources.infraestructure.repositories.resource_respository import ResourceRepository
-from shared.infraestructure.dependency_injection.app import App
+from resources.infrastructure.repositories.resource_respository import ResourceRepository
+from shared.infrastructure.dependency_injection.app import App
 from resources.domain.factory import Factory
 
 

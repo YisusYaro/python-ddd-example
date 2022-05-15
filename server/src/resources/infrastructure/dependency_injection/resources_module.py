@@ -1,10 +1,10 @@
 from dependency_injector import providers
 
-from shared.infraestructure.dependency_injection.app import App
+from shared.infrastructure.dependency_injection.app import App
 
 from resources.application.commands.create_resource_handler import CreateResourceHandler
 from resources.application.queries.get_resource_handler import GetResourceHandler
-from resources.infraestructure.repositories.resource_respository import ResourceRepository
+from resources.infrastructure.repositories.resource_respository import ResourceRepository
 from resources.application.events.resource_created_handler import ResourceCreatedHandler
 
 
@@ -32,7 +32,7 @@ def setApplication():
     setEvents()
 
 
-def setInfraestructure():
+def setInfrastructure():
     App().container.ResourceRepository = providers.Singleton(
         ResourceRepository,
     )
@@ -40,4 +40,4 @@ def setInfraestructure():
 
 def setResourcesModule():
     setApplication()
-    setInfraestructure()
+    setInfrastructure()

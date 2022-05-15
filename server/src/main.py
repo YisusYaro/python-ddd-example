@@ -5,8 +5,8 @@ from waitress import serve
 
 from app_controller import app_controller
 from resources.interface.controller import resources_controller
-from resources.infraestructure.dependency_injection.resources_module import setResourcesModule
-from shared.infraestructure.dependency_injection.app import App
+from resources.infrastructure.dependency_injection.resources_module import setResourcesModule
+from shared.infrastructure.dependency_injection.app import App
 
 app = flask.Flask(__name__)
 
